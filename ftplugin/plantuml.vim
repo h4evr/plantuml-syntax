@@ -5,10 +5,6 @@ let b:loaded_plantuml_plugin = 1
 let s:cpo_save = &cpo
 set cpo&vim
 
-if !exists('g:plantuml_executable_script')
-  let g:plantuml_executable_script='plantuml'
-endif
-
 if exists('loaded_matchit')
   let b:match_ignorecase = 0
   let b:match_words =
@@ -19,8 +15,6 @@ if exists('loaded_matchit')
         \ ',\<title\>:\<endtitle\>' .
         \ ',\<\while\>:\<endwhile\>'
 endif
-
-let &l:makeprg=g:plantuml_executable_script . ' ' .  fnameescape(expand('%'))
 
 setlocal comments=s1:/',mb:',ex:'/,:' commentstring=/'%s'/ formatoptions-=t formatoptions+=croql
 
